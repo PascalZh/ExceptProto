@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Hello World!</title>
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+
+  <link rel="stylesheet" type="text/css" href="./styles.css">
+  <style>
+    body {
+      /* background-color: #808080; */
+      margin: 0;
+      padding: 0;
+    }
+    #viewerContainer {
+      overflow: auto;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+  <link rel="stylesheet" href="../node_modules/pdfjs-dist/web/pdf_viewer.css">
+
+  <script src="../node_modules/pdfjs-dist/build/pdf.js"></script>
+  <script src="../node_modules/pdfjs-dist/web/pdf_viewer.js"></script>
+</head>
+<body>
+  <h1>Hello World!</h1>
+  <strong id="test-log">log</strong>
+  <p>Current theme source: <strong id="theme-source">System</strong></p>
+  <p>Current PDF file path: <strong id="pdf-file-path"></strong></p>
+
+  <button id="toggle-dark-mode">Toggle Dark Mode</button>
+  <button id="reset-to-system">Reset to System Theme</button>
+  <button id="open-file">Open File</button>
+
+  <br/>
+  <canvas id="the-canvas" style="border: 1px solid black; direction: ltr;"></canvas>
+
+  <div id="viewerContainer">
+    <div id="viewer" class="pdfViewer"></div>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>

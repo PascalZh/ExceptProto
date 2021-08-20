@@ -1,0 +1,21 @@
+{
+  "name": "exceptproto",
+  "productName": "ExceptProto",
+  "description": "My Electron application description",
+  "keywords": [],
+  "main": "./src/main.js",
+  "version": "1.0.0",
+  "author": "pascalzhang",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {
+    "pdfjs-dist": "^2.9.359"
+  },
+  "devDependencies": {
+    "electron": "^13.1.9",
+    "webpack": "^5.51.1",
+    "webpack-cli": "^4.8.0"
+  },
+  "license": "MIT"
+}
