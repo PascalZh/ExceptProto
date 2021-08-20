@@ -7,12 +7,17 @@ function createWindow () {
   const win = new BrowserWindow({
     width: 800,
     height: 600,
+    show: false,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
     }
   })
 
-  win.loadFile(path.join(__dirname, 'index.html'))
+  win.maximize()
+  
+  win.loadFile('index.html')
+
+  win.show()
 
   ipcMain.handle('dark-mode:toggle', () => {
     if (nativeTheme.shouldUseDarkColors) {

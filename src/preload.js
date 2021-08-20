@@ -1,5 +1,3 @@
-const pdfjsLib = require('pdfjs-dist')
-const pdfjsViewer = require('pdfjs-dist/web/pdf_viewer')
 const { contextBridge, ipcRenderer } = require('electron')
 
 contextBridge.exposeInMainWorld('darkMode', {

@@ -7,10 +7,12 @@
   "version": "1.0.0",
   "author": "pascalzhang",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build": "npx webpack"
   },
   "dependencies": {
-    "pdfjs-dist": "^2.9.359"
+    "pdfjs-dist": "^2.9.359",
+    "worker-loader": "^3.0.8"
   },
   "devDependencies": {
     "electron": "^13.1.9",

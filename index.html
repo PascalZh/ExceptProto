@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Hello World!</title>
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+
+  <link rel="stylesheet" type="text/css" href="./src/styles.css">
+  <style>
+    body {
+      /* background-color: #808080; */
+      margin: 0;
+      padding: 0; 
+    }
+    
+    #viewerContainerParent {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    #viewerContainer {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+
+      overflow: scroll;
+      /* Hiding the scroll bar */
+      padding-right: 17px; /* Increase/decrease this value for cross-browser compatibility */
+      padding-bottom: 17px;
+      box-sizing: content-box; /* So the width will be 100% + 17px */
+    }
+
+  </style>
+  <link rel="stylesheet" href="./node_modules/pdfjs-dist/web/pdf_viewer.css">
+
+</head>
+<body>
+  <p hidden>Current theme source: <strong id="theme-source">System</strong></p>
+  <p hidden>Current PDF file path: <strong id="pdf-file-path"></strong></p>
+
+  <div style="position: absolute;z-index: 1;">
+    <button class="" id="toggle-dark-mode">Toggle Dark Mode</button>
+    <button class="" id="reset-to-system">Reset to System Theme</button>
+    <button class="" id="open-file">Open File</button>
+    <br/>
+    <button class="" title="Previous Page" id="previous-page">Previous Page</button>
+    <button class="" title="Next Page" id="next-page">Next Page</button>
+    <button class="" title="" id="zoom-in-page">Zoom In</button>
+    <button class="" title="" id="zoom-out-page">Zoom Out</button>
+    <p>Page <strong id="page-number">1</strong></p>
+  </div>
+
+  <!-- <br/> -->
+  <!-- <canvas id="the-canvas" style="border: 1px solid black; direction: ltr;"></canvas> -->
+
+  <div id="viewerContainerParent">
+  <div id="viewerContainer">
+    <div id="viewer" class="pdfViewer"></div>
+  </div>
+  </div>
+
+  <script src="./build/webpack/renderer.bundle.js"></script>
+</body>
+</html>

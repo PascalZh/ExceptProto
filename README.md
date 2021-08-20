@@ -1,0 +1,1 @@
+- [ ] listen to ctrl+scroll event and touch pad pinch gestures to zoom in and zoom out pdf viewer with pdf viewer's apis.
