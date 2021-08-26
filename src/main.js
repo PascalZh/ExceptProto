@@ -1,7 +1,7 @@
 const { app, BrowserWindow, ipcMain, nativeTheme, dialog, Menu, MenuItem } = require('electron')
 const path = require('path')
 
-let win;
+let win
 
 function createWindow () {
   const win = new BrowserWindow({
@@ -14,8 +14,10 @@ function createWindow () {
   })
 
   win.maximize()
-  
+
   win.loadFile('index.html')
+
+  win.webContents.toggleDevTools()
 
   win.show()
 
@@ -33,7 +35,8 @@ function createWindow () {
   })
 
   ipcMain.handle('file:open', () => {
-    return dialog.showOpenDialogSync({ properties: ['openFile'],
+    return dialog.showOpenDialogSync({
+      properties: ['openFile'],
       filters: [{ name: 'PDF', extensions: ['pdf'] }]
     })
   })

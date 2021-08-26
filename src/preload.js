@@ -6,5 +6,5 @@ contextBridge.exposeInMainWorld('darkMode', {
 })
 
 contextBridge.exposeInMainWorld('file', {
-  open: () => ipcRenderer.invoke('file:open'),
+  open: () => ipcRenderer.invoke('file:open')
 })
