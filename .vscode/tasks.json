@@ -10,7 +10,7 @@
 			},
 			"problemMatcher": [],
 			"label": "npm: build",
-			"detail": "npx webpack"
+			"detail": "npm run build"
 		}
 	]
 }

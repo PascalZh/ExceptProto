@@ -1,5 +1,7 @@
-'use strict'
 import { loadPDF2Canvas, PDFViewerApp } from './pdfjs_viewer'
+
+import { createApp } from 'vue'
+import App from './App.vue'
 
 document.getElementById('toggle-dark-mode').addEventListener('click', async () => {
   const isDarkMode = await window.darkMode.toggle()
@@ -21,8 +23,9 @@ document.getElementById('open-file').addEventListener('click', async () => {
   }
 })
 
-const DEFAULT_URL = 'C:\\Users\\Pascal\\Downloads\\Real analysis measure theory, integration, and Hilbert spaces by Elias M. Stein, Rami Shakarchi (z-lib.org).pdf'
+const DEFAULT_URL = './Real analysis measure theory, integration, and Hilbert spaces by Elias M. Stein, Rami Shakarchi (z-lib.org).pdf'
 
 PDFViewerApp.initUI()
-PDFViewerApp.open(DEFAULT_URL).then(() => PDFViewerApp.close())
-window.App = PDFViewerApp
+PDFViewerApp.open(DEFAULT_URL)
+
+createApp(App).mount('#app')

@@ -1,16 +1,14 @@
-'use strict'
-
 import './global_options'
-import { PDFViewer, EventBus, PDFLinkService, PDFFindController, PDFScriptingManager, PDFHistory, ProgressBar } from 'pdfjs-dist/web/pdf_viewer'
 import {
   GlobalWorkerOptions, getDocument,
   InvalidPDFException, MissingPDFException, UnexpectedResponseException,
   shadow
 } from 'pdfjs-dist'
+import { PDFViewer, EventBus, PDFLinkService, PDFFindController, PDFScriptingManager, PDFHistory, ProgressBar } from 'pdfjs-dist/web/pdf_viewer'
 
 // The workerSrc property shall be specified.
 //
-GlobalWorkerOptions.workerSrc = './build/webpack/pdf.worker.bundle.js'
+GlobalWorkerOptions.workerSrc = './pdf.worker.js'
 
 // Some PDFs need external cmaps.
 //

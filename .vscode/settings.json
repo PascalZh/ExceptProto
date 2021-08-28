@@ -13,6 +13,8 @@
     "pldi",
     "rami",
     "submenu",
-    "tracemonkey"
+    "tracemonkey",
+    "vite",
+    "vitejs"
   ]
 }
