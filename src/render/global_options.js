@@ -1,23 +1,23 @@
 const pdfViewer = {
   _defaultScale: 1,
-  get defaultScale() {
+  get defaultScale () {
     return this._defaultScale
   },
-  set defaultScale(value) {
+  set defaultScale (value) {
     this._defaultScale = value
   },
   _maxScale: 10,
-  get maxScale() {
+  get maxScale () {
     return this._maxScale
   },
-  set maxScale(value) {
+  set maxScale (value) {
     this._maxScale = value
   },
   _minScale: 0.25,
-  get minScale() {
+  get minScale () {
     return this._minScale
   },
-  set minScale(value) {
+  set minScale (value) {
     this._minScale = value
   }
 }

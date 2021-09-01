@@ -1,15 +1,3 @@
-@media (prefers-color-scheme: dark) {
-  body { background: #333; color: white; }
-}
-
-@media (prefers-color-scheme: light) {
-  body { background: #ddd; color: black; }
-}
-
-.hidden {
-  display: none;
-}
-
 #loadingBar {
   position: relative;
   height: 0.6rem;

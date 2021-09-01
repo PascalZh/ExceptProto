@@ -11,6 +11,15 @@
 			"problemMatcher": [],
 			"label": "npm: build",
 			"detail": "npm run build"
+		},
+		{
+			"type": "npm",
+			"script": "dev",
+			"problemMatcher": [
+				"$eslint-compact"
+			],
+			"label": "npm: dev",
+			"detail": "vite"
 		}
 	]
 }

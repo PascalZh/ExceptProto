@@ -2,6 +2,8 @@ const { app, BrowserWindow, ipcMain, nativeTheme, dialog, Menu, MenuItem } = req
 const path = require('path')
 
 let win
+// const isDev = process.env.NODE_ENV === 'development'
+const isDev = true
 
 function createWindow () {
   const win = new BrowserWindow({
@@ -15,9 +17,15 @@ function createWindow () {
 
   win.maximize()
 
-  win.loadFile('dist/index.html')
+  if (isDev) {
+    win.loadURL('http://localhost:3000/')
+  } else {
+    win.loadFile('dist/index.html')
+  }
 
-  win.webContents.toggleDevTools()
+  if (isDev) {
+    win.webContents.toggleDevTools()
+  }
 
   win.show()
 
