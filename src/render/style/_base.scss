@@ -8,18 +8,26 @@ body {
   padding: 0; 
 }
 
-div.hide-scroll-bar-container {
+.hide-scroll-bar-container {
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
-.hide-scroll-bar-container > div {
-  width: 100%;
-  height: 100%;
+.hide-scroll-bar-container > {
+  div, span {
+    width: 100%;
+    height: 100%;
 
-  overflow: scroll;
-  /* Hiding the scroll bar */
-  padding-right: 17px; /* Increase/decrease this value for cross-browser compatibility */
-  padding-bottom: 17px;
-  box-sizing: content-box; /* So the width will be 100% + 17px */
+    overflow: scroll;
+    /* Hiding the scroll bar */
+    padding-right: 17px; /* Increase/decrease this value for cross-browser compatibility */
+    padding-bottom: 17px;
+    box-sizing: content-box; /* So the width will be 100% + 17px */
+  }
+}
+
+// This issue is fixed recently, but not released in npm. Delete it when it is released.
+/* Avoids https://github.com/mozilla/pdf.js/issues/13840 in Chrome */
+.textLayer br::selection {
+  background: transparent;
 }

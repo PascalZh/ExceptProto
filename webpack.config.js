@@ -4,9 +4,9 @@ const path = require('path')
 module.exports = {
   context: __dirname,
   entry: {
-    'pdf.worker': 'pdfjs-dist/build/pdf.worker.entry'
+    'pdf.worker.min': 'pdfjs-dist/build/pdf.worker.entry'
   },
-  mode: 'none',
+  mode: 'production',
   output: {
     path: path.join(__dirname, 'public')
   }

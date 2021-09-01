@@ -8,7 +8,7 @@ import { PDFViewer, EventBus, PDFLinkService, PDFFindController, PDFScriptingMan
 
 // The workerSrc property shall be specified.
 //
-GlobalWorkerOptions.workerSrc = './pdf.worker.js'
+GlobalWorkerOptions.workerSrc = './pdf.worker.min.js'
 
 // Some PDFs need external cmaps.
 //
@@ -248,22 +248,6 @@ const PDFViewerApp = {
     }
   }
 }
-
-document.getElementById('previous-page').addEventListener('click', function () {
-  PDFViewerApp.pdfViewer.currentPageNumber--
-})
-
-document.getElementById('next-page').addEventListener('click', function () {
-  PDFViewerApp.pdfViewer.currentPageNumber++
-})
-
-document.getElementById('zoom-in-page').addEventListener('click', function () {
-  PDFViewerApp.pdfViewZoomIn()
-})
-
-document.getElementById('zoom-out-page').addEventListener('click', function () {
-  PDFViewerApp.pdfViewZoomOut()
-})
 
 function loadPDF2Canvas (filePath, canvasID) {
   const loadingTask = getDocument(filePath)

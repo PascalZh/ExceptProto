@@ -2,5 +2,4 @@ node_modules
 out
 build
 dist
-/public/pdf.worker.js
-public/Real analysis measure theory, integration, and Hilbert spaces by Elias M. Stein, Rami Shakarchi (z-lib.org).pdf
+public
