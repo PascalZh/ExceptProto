@@ -8,7 +8,7 @@
   "author": "pascalzhang",
   "scripts": {
     "start": "electron .",
-    "dev": "vite",
+    "dev": "concurrently -n=vue,electron -c=green,blue \"vite\" \"electron .\"",
     "build": "vite build",
     "serve": "vite preview"
   },
@@ -20,6 +20,7 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.6.0",
     "@vue/compiler-sfc": "^3.2.6",
+    "concurrently": "^6.2.1",
     "electron": "^13.1.9",
     "eslint": "^7.32.0",
     "eslint-config-standard": "^16.0.3",
@@ -27,6 +28,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-vue": "^7.16.0",
+    "pug": "^3.0.2",
     "sass": "^1.38.2",
     "vite": "^2.5.1",
     "webpack": "^5.51.1",

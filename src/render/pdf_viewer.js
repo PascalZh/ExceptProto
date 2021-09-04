@@ -140,7 +140,7 @@ const PDFViewerApp = {
   },
 
   initUI () {
-    const container = document.getElementById('viewerContainer')
+    const container = document.getElementById('viewer-container')
     this.container = container
 
     const eventBus = new EventBus()

@@ -2,8 +2,8 @@ const { app, BrowserWindow, ipcMain, nativeTheme, dialog, Menu, MenuItem } = req
 const path = require('path')
 
 let win
-// const isDev = process.env.NODE_ENV === 'development'
-const isDev = true
+const isDev = process.env.NODE_ENV === 'development'
+// const isDev = true
 
 function createWindow () {
   const win = new BrowserWindow({
@@ -42,7 +42,7 @@ function createWindow () {
     nativeTheme.themeSource = 'system'
   })
 
-  ipcMain.handle('file:open', () => {
+  ipcMain.handle('file:open-dialog', () => {
     return dialog.showOpenDialogSync({
       properties: ['openFile'],
       filters: [{ name: 'PDF', extensions: ['pdf'] }]

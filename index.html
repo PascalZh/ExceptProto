@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <title>ExceptProto</title>
   <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
 
 </head>
+
 <body>
 
-  <div class="hide-scroll-bar-container absolute">
-      <div class="absolute" id="viewerContainer">
-        <div id="viewer" class="pdfViewer"></div>
-        <div id="loadingBar">
-          <div class="progress"></div>
-          <div class="glimmer"></div>
-        </div>
+  <div id="app"></div>
+
+  <!-- Can not be included into virtual dom, don't move it to a Vue component -->
+  <div class="hide-scroll-bar-container absolute" id="pdf-viewer">
+    <div class="absolute" id="viewer-container">
+      <div class="pdfViewer" id="viewer"></div>
+      <div id="loadingBar">
+        <div class="progress"></div>
+        <div class="glimmer"></div>
       </div>
+    </div>
   </div>
 
-  <div id="app"></div>
   <script type="module" src="./src/render/index.js"></script>
 
 </body>
+
 </html>

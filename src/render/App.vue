@@ -19,10 +19,10 @@ async function resetToSystem () {
 }
 
 async function openFile () {
-  const filePaths = await window.file.open()
+  const filePaths = await window.file.openDialog()
 
-  if (filePaths.length === 1) {
-    ;
+  if (filePaths && filePaths.length === 1) {
+    PDFViewerApp.open(filePaths[0])
   }
 }
 
@@ -30,41 +30,45 @@ async function openFile () {
 
 <template lang="pug">
 div
-  p(hidden)
-    | Current theme source:
-    strong#theme-source System
-  p(hidden)
-    | Current PDF file path:
-    strong#pdf-file-path
-  button(@click="toggleDarkMode")
-    | Toggle Dark Mode
-  button(@click="resetToSystem")
-    | Reset to System Theme
-  button(@click="openFile")
-    | Open File
-  br
-  button#previous-page(@click="PDFViewerApp.pdfViewer.currentPageNumber--")
-    | Previous Page
-  button#next-page(@click="PDFViewerApp.pdfViewer.currentPageNumber++")
-    | Next Page
-  button(@click="PDFViewerApp.pdfViewZoomIn()")
-    | Zoom In
-  button(@click="PDFViewerApp.pdfViewZoomOut()")
-    | Zoom Out
-  p Page
-    strong#page-number 1
+  #ui
+    p(hidden)
+      | Current theme source:
+      strong#theme-source System
+    p(hidden)
+      | Current PDF file path:
+      strong#pdf-file-path
+    button(@click="toggleDarkMode")
+      | Toggle Dark Mode
+    button(@click="resetToSystem")
+      | Reset to System Theme
+    button(@click="openFile")
+      | Open File
+    br
+    button#previous-page(@click="PDFViewerApp.pdfViewer.currentPageNumber--")
+      | Previous Page
+    button#next-page(@click="PDFViewerApp.pdfViewer.currentPageNumber++")
+      | Next Page
+    button(@click="PDFViewerApp.pdfViewZoomIn()")
+      | Zoom In
+    button(@click="PDFViewerApp.pdfViewZoomOut()")
+      | Zoom Out
+    p Page
+      strong#page-number 1
 </template>
 
 <style lang="scss">
 @import "./style/base";
 @import "pdfjs-dist/web/pdf_viewer.css";
 #app {
-  z-index: 1;
-  position: absolute;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+#ui {
+  z-index: 1;
+  position: absolute;
 }
 </style>
