@@ -3,7 +3,12 @@ const path = require('path')
 
 let win
 const isDev = process.env.NODE_ENV === 'development'
-// const isDev = true
+
+if (isDev) {
+  try {
+    require('electron-reloader')(module)
+  } catch {}
+}
 
 function createWindow () {
   const win = new BrowserWindow({

@@ -4,7 +4,7 @@ import {
   InvalidPDFException, MissingPDFException, UnexpectedResponseException,
   shadow
 } from 'pdfjs-dist'
-import { PDFViewer, EventBus, PDFLinkService, PDFFindController, PDFScriptingManager, PDFHistory, ProgressBar } from 'pdfjs-dist/web/pdf_viewer'
+import { PDFViewer, EventBus, PDFLinkService, PDFFindController, PDFScriptingManager, PDFHistory, ProgressBar, NullL10n } from 'pdfjs-dist/web/pdf_viewer'
 
 // The workerSrc property shall be specified.
 //
@@ -24,12 +24,13 @@ const SANDBOX_BUNDLE_SRC = './node_modules/pdfjs-dist/build/pdf.sandbox.js'
 // eslint-disable-next-line no-unused-vars
 const PDFViewerApp = {
   container: null,
+  eventBus: null,
   pdfLoadingTask: null,
   pdfDocument: null,
   pdfViewer: null,
   pdfHistory: null,
   pdfLinkService: null,
-  eventBus: null,
+  l10n: null,
 
   /**
    * Opens PDF document specified by URL.
@@ -166,11 +167,14 @@ const PDFViewerApp = {
     })
     this.pdfScriptingManager = pdfScriptingManager
 
+    this.l10n = NullL10n;
+
     const pdfViewer = new PDFViewer({
       container,
       eventBus,
       linkService: pdfLinkService,
       findController: pdfFindController,
+      l10n: this.l10n,
       scriptingManager: pdfScriptingManager,
       enableScripting: true, // Only necessary in PDF.js version 2.10.377 and below.
       removePageBorders: false // Removes the border shadow around the pages. The default value is `false`.
@@ -277,3 +281,5 @@ export {
   loadPDF2Canvas,
   PDFViewerApp
 }
+
+export default PDFViewerApp

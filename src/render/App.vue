@@ -57,7 +57,7 @@ div
 </template>
 
 <style lang="scss">
-@import "./style/base";
+@import "./styles/base";
 @import "pdfjs-dist/web/pdf_viewer.css";
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

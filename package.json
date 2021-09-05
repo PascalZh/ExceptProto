@@ -3,7 +3,7 @@
   "productName": "ExceptProto",
   "description": "My Electron application description",
   "keywords": [],
-  "main": "./src/main.js",
+  "main": "./src/main/main.js",
   "version": "1.0.0",
   "author": "pascalzhang",
   "scripts": {
@@ -22,6 +22,7 @@
     "@vue/compiler-sfc": "^3.2.6",
     "concurrently": "^6.2.1",
     "electron": "^13.1.9",
+    "electron-reloader": "^1.2.1",
     "eslint": "^7.32.0",
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-import": "^2.24.1",
