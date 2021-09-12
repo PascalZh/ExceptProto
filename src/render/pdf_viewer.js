@@ -167,7 +167,7 @@ const PDFViewerApp = {
     })
     this.pdfScriptingManager = pdfScriptingManager
 
-    this.l10n = NullL10n;
+    this.l10n = NullL10n
 
     const pdfViewer = new PDFViewer({
       container,

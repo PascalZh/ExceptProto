@@ -54,6 +54,10 @@ div
       | Zoom Out
     p Page
       strong#page-number 1
+    br
+    label(class='apple-switch')
+      input(type="checkbox")
+
 </template>
 
 <style lang="scss">
