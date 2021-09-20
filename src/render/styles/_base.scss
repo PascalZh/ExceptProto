@@ -30,3 +30,12 @@ body {
 .textLayer br::selection {
   background: transparent;
 }
+
+.annotation {
+  width: 100%;
+  height: 100%;
+  background-color: #65c466;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}

@@ -1,8 +1,11 @@
 <script setup>
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
+/* eslint-disable no-unused-vars */
 import { PDFViewerApp } from './pdf_viewer'
+import './annotation'
 
+window.PDFViewerApp = PDFViewerApp
 const DEFAULT_URL = './Real analysis measure theory, integration, and Hilbert spaces by Elias M. Stein, Rami Shakarchi (z-lib.org).pdf'
 
 PDFViewerApp.initUI()

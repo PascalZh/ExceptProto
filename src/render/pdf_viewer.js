@@ -21,12 +21,13 @@ const CMAP_PACKED = true
 const SEARCH_FOR = '' // try 'Mozilla';
 const SANDBOX_BUNDLE_SRC = './node_modules/pdfjs-dist/build/pdf.sandbox.js'
 
-// eslint-disable-next-line no-unused-vars
 const PDFViewerApp = {
   container: null,
   eventBus: null,
   pdfLoadingTask: null,
+  /** @type {PDFDocumentProxy} */
   pdfDocument: null,
+  /** @type {PDFViewer} */
   pdfViewer: null,
   pdfHistory: null,
   pdfLinkService: null,
@@ -250,6 +251,14 @@ const PDFViewerApp = {
     if (percent > this.loadingBar.percent || isNaN(percent)) {
       this.loadingBar.percent = percent
     }
+  },
+
+  async getCurrentPageTextContent () {
+    if (this.pdfDocument === null) {
+      return null
+    }
+    const page = await this.pdfDocument.getPage(this.pdfViewer.currentPageNumber)
+    return page.getTextContent()
   }
 }
 
